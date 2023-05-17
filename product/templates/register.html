@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} Code With Me | Register {% endblock %}
+{% block content %}
+<body class= "text-center">
+  <div class= "container">
+    <form method= "POST" class= "form-register" style= "color: white; background-color: rgba(58, 58, 158, 0.8)">
+      {{ form.hidden_tag() }}
+      <h1 class="h3 mb-3 font-weight-normal">
+        CREATE YOUR ACCOUNT
+      </h1>
+      <br />
+      {{ form.username.label() }}
+      {{ form.username(class= "form-control", placeholder= "Enter your username") }}
+      
+      {{ form.email_address.label() }}
+      {{ form.email_address(class= "form-control", placeholder= "Enter your email") }}
+      
+      {{ form.password_1.label() }}
+      {{ form.password_1(class= "form-control", placeholder= "Enter your password") }}
+      
+      {{ form.password_2.label() }}
+      {{ form.password_2(class= "form-control", placeholder= "Confirm your password") }}
+      <br />
+      <div class="checkbox mb-3">
+        <h6>Already have an account?</h6>
+        <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Sign in</a>
+      </div>
+      {{ form.submit(class= "btn btn-lg btn-block btn-primary")}}
+    </form>
+  </div>
+</body>
+{% endblock %}
